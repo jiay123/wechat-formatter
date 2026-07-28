@@ -2,6 +2,29 @@
 
 > Markdown 一键排版，写文章 → 点复制 → 粘进公众号后台，图文一次成型。
 
+## 两种使用方式
+
+### 方式一：下载 exe 直接运行（推荐）
+
+去 [Releases](../../releases) 页面下载 `公众号排版.exe`，双击运行即可。不需装 Python，不需任何配置。首次使用「手机预览」功能需联网下载浏览器组件（仅一次，约 100MB）。
+
+### 方式二：源码运行
+
+```bash
+# 1. 安装依赖
+pip install pillow playwright
+
+# 2. 安装浏览器组件（手机预览需要，跳过也行）
+playwright install chromium
+
+# 3. 运行
+python wechat_formatter.py
+
+# 或打包成 exe 自己用
+pip install pyinstaller
+pyinstaller 公众号排版.spec
+```
+
 ## 能干什么
 
 写公众号的朋友都懂：在编辑器里手动调标题颜色、分段、引用框、配图对齐……一篇下来半小时没了，还容易格式乱掉。
@@ -12,14 +35,14 @@
 
 - 不用在公众号后台手动调样式，复制粘贴就发
 - 图片自动内联，不用一张张后台上传
-- 段落自动按手机阅读节奏排
+- 段落自动按手机阅读节奏分拆，手机阅读不累
 - 自带手机预览，发之前就能看效果
 
 ## 不做什么
 
 不联网、不上传、不碰你任何文件。图全程在你自己电脑上，零隐私风险。
 
-## 三步用法
+## 用法
 
 1. **写文章**：左边粘贴 Markdown 内容
 2. **放图片**：把图存进文章同目录的 `images/` 文件夹，在想插图的地方写 `{{图}}`
@@ -33,21 +56,7 @@
 
 ## 手机预览
 
-首次用「手机预览」会自动下载 Chromium 组件（约百来 MB，只下一次，之后离线可用），耐心等几分钟。
-
-## 依赖安装
-
-```bash
-pip install pillow playwright
-playwright install chromium
-```
-
-## 打包成 exe
-
-```bash
-pip install pyinstaller
-pyinstaller 公众号排版.spec
-```
+首次用「手机预览」会自动下载 Chromium 组件（约百来 MB，只下这一次，之后离线可用），耐心等几分钟。
 
 ## 注意
 
